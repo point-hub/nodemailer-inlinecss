@@ -21,6 +21,10 @@
   ],
   "author": "martiendt@gmail.com",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/point-hub/nodemailer-inlinecss.git"
+  },
   "dependencies": {
     "juice": "^8.0.0"
   },
