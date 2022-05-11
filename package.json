@@ -1,6 +1,6 @@
 {
   "name": "@point-hub/nodemailer-inlinecss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Nodemailer plugin for inlining CSS",
   "type": "module",
   "main": "lib/index.js",
