@@ -1,4 +1,5 @@
 # Nodemailer Inlining CSS
+`@point-hub/nodemailer-inlinecss` is an ESM-only module - you are not able to import it with `require()`.
 
 ## Install
 
