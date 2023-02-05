@@ -10,11 +10,12 @@ Install from npm
 ## Usage 
 ### Internal Styles
 ```javascript
-import nodemailer from "nodemailer";
+import { createTransport } from "nodemailer";
+import { PluginFunction } from "nodemailer/lib/mailer";
 import inlineCss from "@point-hub/nodemailer-inlinecss";
 
 var transporter = nodemailer.createTransport();
-transporter.use('compile', inLineCss());
+transporter.use('compile', inlineCss() as PluginFunction);
 transporter.sendMail({
     from: '...',
     to: '...',
@@ -29,13 +30,14 @@ Will result in an email with the following HTML:
 ### External Styles
 ```javascript
 import fs from "fs";
-import nodemailer from "nodemailer";
+import { createTransport } from "nodemailer";
+import { PluginFunction } from "nodemailer/lib/mailer";
 import inlineCss from "@point-hub/nodemailer-inlinecss";
 
 var transporter = nodemailer.createTransport();
-transporter.use('compile', inLineCss({
+transporter.use('compile', inlineCss({
     extraCss: fs.readFileSync("./src/styles.min.css").toString(),
-}));
+}) as PluginFunction);
 transporter.sendMail({
     from: '...',
     to: '...',

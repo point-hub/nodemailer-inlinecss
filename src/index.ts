@@ -1,4 +1,6 @@
 import juice from "juice";
+import { PluginFunction } from "nodemailer/lib/mailer";
+
 interface ResolveContentFunction {
   (
     arg0: object,
@@ -14,11 +16,11 @@ interface Mail {
   resolveContent: ResolveContentFunction;
 }
 
-const plugin = function (options: object = {}) {
+const plugin = function (options: object = {}): PluginFunction {
   return async function (mail: Mail, callback: (error?: unknown) => void) {
     const inlineCss = new InlineCss(options);
     await inlineCss.process(mail, callback);
-  };
+  } as PluginFunction;
 };
 
 class InlineCss {
